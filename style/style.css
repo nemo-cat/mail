@@ -1,0 +1,287 @@
+/* 플렉스 위주로 레이아웃 배치하기  */
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    font-family: 'Pretendard-Regular';
+    font-size: 14px;
+    color: #333;
+    height: 100vh;
+    padding: 50px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    height: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.wrap {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 4px 13px rgb(0, 0,0,0.25);
+
+}
+
+.hide {
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    border: 0;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* ============================ */
+/* 오른쪽 섹션 */
+
+.right_wrap {
+    display: flex;
+    flex-flow: nowrap column;
+    justify-content: space-between;
+    position: relative;
+    width: 250px;
+    height: 100%;
+    padding: 20px;
+}
+
+.right_wrap h1 {
+    height: 130px;
+    background: url(../images/logo.png) no-repeat center;
+}
+
+.top_btn {
+    display: flex;
+    font-size: 0;
+    padding: 0 0 20px;
+}
+
+.top_btn .writeMail {
+    width: 50%;
+    background: #6941D9;
+    color: #fff;
+    border-radius: 20px 0 0 20px;
+}
+
+.top_btn .toMe {
+    width: 50%;
+    border-radius: 0 20px 20px 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.gnb_menu li {
+    line-height: 50px;
+    padding: 0 20px 0 55px;
+    border-radius: 20px;
+    background: #f3f3f3;
+}
+
+.gnb_menu li:nth-child(1){
+    background: url(../images/ico_mailList01_black.png) no-repeat left 20px center;
+}
+.gnb_menu li:nth-child(2){
+    background: url(../images/ico_mailList02_black.png) no-repeat left 20px center;
+}
+.gnb_menu li:nth-child(3){
+    background: url(../images/ico_mailList03_black.png) no-repeat left 20px center;
+}
+.gnb_menu li:nth-child(4){
+    background: url(../images/ico_mailList04_black.png) no-repeat left 20px center;
+}
+.gnb_menu li:nth-child(5){
+    background: url(../images/ico_mailList05_black.png) no-repeat left 20px center;
+}
+
+.gnb_menu li.active {
+    color: #fff;
+    background: url(../images/ico_mailList02_whtie.png) no-repeat left 20px center #6941D9;
+
+}
+.gnb_menu li:hover {
+    background-color: #f3f3f3;
+}
+
+.right_bottom {
+    display: flex;
+    justify-content: center;
+}
+
+
+.bottom_btn button {
+    padding: 0 0 0 35px;
+    font-size: 12px;
+    color: #ddd;
+    background: url(../images/ico_logout.png) no-repeat left;
+}
+
+/* ============================================================== */
+/* 왼쪽 세션 */
+
+.left_wrap {
+    display: flex;
+    flex-flow: nowrap column;
+    justify-content: space-between;
+    width: calc(100% - 250px);
+    height: 100%;
+    background:#F5F9FC;
+    border-left: 1px solid #F3f4f6;
+}
+
+.search_box {
+    position: relative;
+    height: 60px;
+    padding: 10px;
+    background: #fff;
+}
+
+.search_box input {
+    width: 300px;
+    height: 40px;
+    text-indent: 40px;
+    border: none;
+    border-radius: 40px;
+}
+
+.search_box input::placeholder {
+    font-family: 'Pretendard-Regular';
+    color: #ddd;
+}
+
+.search_box input:focus {
+    outline: none;
+    background: #f3f3f3;
+    color: #333;
+}
+
+.search_box button {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background: url(../images/ico_search_placeholder.png) no-repeat center;
+}
+
+.search_box input:focus + button {
+    background-image: url(../images/ico_search_focus.png);
+}
+
+/* 콘텐츠영역 */
+
+.content {
+height: calc(100% - 120px);
+overflow: scroll;
+    padding: 0 20px;
+}
+
+/* 콘텐츠 타이틀 */
+
+.content .content_tit {
+    height: 70px;
+    line-height: 70px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.content .content_tit span {
+    padding: 0 0 0 10px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.content .content_tit span .color {
+    color: #6941D9;
+    font-weight: 700;
+}
+
+/* 메일 리스트 영역 */
+
+.content .mail_list {
+
+    background: pink;
+}
+
+.content .mail_list li {
+    position: relative;
+    display: flex;
+    line-height: 45px;
+}
+
+.content .mail_list li:nth-child(odd){
+    background-color: yellow;
+}
+
+.content .mail_list .mail_icon_box {
+    display: flex;
+    justify-content: space-between;
+    width: 166px;
+    padding: 0 20px;
+}
+
+.content .mail_list .mail_icon_box div ~ div {
+    padding-left: 10px;
+}
+
+.content .mail_list li a {
+    width: calc(100%);
+}
+.content .mail_list li .mail_date{
+    position: absolute;
+    right: 20px;
+}
+
+/* 왼쪽 하단 */
+
+.left_btm {
+    height: 60px;
+    line-height: 60px;
+    background: #fff;
+}
+
+.left_btm ol{
+    display: flex;
+    justify-content: center;
+}
+
+.left_btm ol li ~ li {
+    padding-left: 10px;
+}
+
+.left_btm ol li button {
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #8d8d8d;
+    background: none;
+}
+
+.left_btm ol li button.active {
+    color: #9675FE;
+    border: 1px solid #9675FE;
+}
