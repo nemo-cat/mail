@@ -41,7 +41,7 @@ button {
     height: 100%;
     overflow: hidden;
     border-radius: 20px;
-    box-shadow: 0 4px 13px rgb(0, 0,0,0.25);
+    box-shadow: 0 4px 13px rgba(0, 0,0,0.25);
 
 }
 
@@ -58,7 +58,7 @@ button {
 /* ============================ */
 /* 오른쪽 섹션 */
 
-.right_wrap {
+.left_section {
     display: flex;
     flex-flow: nowrap column;
     justify-content: space-between;
@@ -68,7 +68,7 @@ button {
     padding: 20px;
 }
 
-.right_wrap h1 {
+.left_section h1 {
     height: 130px;
     background: url(../images/logo.png) no-repeat center;
 }
@@ -139,9 +139,9 @@ button {
 }
 
 /* ============================================================== */
-/* 왼쪽 세션 */
+/* 오른쪽 섹션 */
 
-.left_wrap {
+.right_section {
     display: flex;
     flex-flow: nowrap column;
     justify-content: space-between;
@@ -150,7 +150,7 @@ button {
     background:#F5F9FC;
     border-left: 1px solid #F3f4f6;
 }
-
+/* 검색박스 */
 .search_box {
     position: relative;
     height: 60px;
@@ -176,6 +176,9 @@ button {
     background: #f3f3f3;
     color: #333;
 }
+.search_box input:focus::placeholder {
+    color: #333;
+}
 
 .search_box button {
     position: absolute;
@@ -195,12 +198,10 @@ button {
 
 .content {
 height: calc(100% - 120px);
-overflow: scroll;
-    padding: 0 20px;
+padding: 0 20px;
 }
 
 /* 콘텐츠 타이틀 */
-
 .content .content_tit {
     height: 70px;
     line-height: 70px;
@@ -220,47 +221,117 @@ overflow: scroll;
 }
 
 /* 메일 리스트 영역 */
-
 .content .mail_list {
-
-    background: pink;
+    position: relative;
+    /* content높이에서 tit영역 뺀 나머지 */
+    height: calc(100% - 70px);
+    overflow-y: scroll;
 }
 
+.content .mail_list::-webkit-scrollbar{
+    margin: 0 0 0 20px;
+    right: 20px;
+    width: 10px;
+    background-color: #DEDEDE;
+   /*  box-shadow: 0 5px 5px rgba(0, 0,0,0.25) inset; */
+    
+}
+.content .mail_list::-webkit-scrollbar-thumb{
+    background-color: #9675FE;
+    border: 2px solid #9675FE; /* 스크롤바 막대 테두리 설정  */
+    border-radius: 12px 12px 12px 12px;
+
+}
+
+
+
 .content .mail_list li {
-    position: relative;
     display: flex;
     line-height: 45px;
 }
 
-.content .mail_list li:nth-child(odd){
-    background-color: yellow;
+.content .mail_list li:hover {
+    background-color: #EBF1F5;
 }
 
-.content .mail_list .mail_icon_box {
+.content .mail_list > div {
+    width: calc(100% - 10px);
+}
+
+
+.content .mail_list li a {
     display: flex;
     justify-content: space-between;
-    width: 166px;
+    width: 100%;
+}
+
+.content .mail_list li .writer {
+    padding: 0 20px 0 0;
+    box-sizing: content-box;
+}
+
+/* 메일 날짜 */
+.content .mail_list li .mail_date{
+    padding: 0 20px;
+    box-sizing: content-box;
+}
+
+
+/* 메일 아이콘 */
+.mail_list .mail_icon_box {
+    display: flex;
+    align-items: center;
     padding: 0 20px;
 }
 
-.content .mail_list .mail_icon_box div ~ div {
-    padding-left: 10px;
+.mail_list .mail_icon_box div {
+    width: 24px;
+    height: 24px;
 }
 
-.content .mail_list li a {
-    width: calc(100%);
+.mail_list .mail_icon_box div ~ div {
+    margin-left: 10px;
 }
-.content .mail_list li .mail_date{
+
+input[type="checkbox"] {
     position: absolute;
-    right: 20px;
+    left: -50000px;
 }
 
+input[type="checkbox"] + label {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: no-repeat center;
+}
+
+#mail_ico1 + label {
+    background-image: url(../images/ico_checkbox_normal.png);
+}
+
+#mail_ico2 + label {
+    background-image: url(../images/ico_favorite_normal.png);
+}
+
+#mail_ico3 { 
+    background: url(../images/ico_mail_normal.png) no-repeat center;
+}
+
+#mail_ico4 {
+    background: url(../images/ico_file.png) no-repeat center;
+}
+
+
+
+
+/* ============================== */
 /* 왼쪽 하단 */
 
 .left_btm {
     height: 60px;
     line-height: 60px;
     background: #fff;
+    box-shadow: -2px 0 15px rgba(54, 54, 54, 0.1);
 }
 
 .left_btm ol{
@@ -284,4 +355,10 @@ overflow: scroll;
 .left_btm ol li button.active {
     color: #9675FE;
     border: 1px solid #9675FE;
+}
+
+.left_btm ol li .normal:hover {
+    border-radius: 24px;
+    background-color: #f3f3f3;
+    color: #333;
 }
