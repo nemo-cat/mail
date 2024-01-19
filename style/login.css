@@ -2,7 +2,7 @@ h1 {
     padding: 0 0 20px;
     font-size: 48px;
     font-weight: 700;
-    color: #6941D9;
+    color: #6941d9;
 }
 
 .wrap {
@@ -17,7 +17,7 @@ h1 {
     flex-flow: column nowrap;
 }
 
-.login_form  input {
+.login_form input {
     width: 300px;
     height: 50px;
     margin: 10px 0;
@@ -27,13 +27,13 @@ h1 {
     color: #333;
 }
 
-.login_form  input::placeholder {
+.login_form input::placeholder {
     color: #ddd;
 }
 
-.login_form  input:focus {
+.login_form input:focus {
     border: none;
-    outline: 1px solid #ddd;
+    outline: 1px solid #6941d9;
 }
 
 .login_form button {
@@ -42,7 +42,7 @@ h1 {
     width: 200px;
     height: 50px;
     border-radius: 50px;
-    background-color:#6941D9;
+    background-color: #6941d9;
     color: #fff;
 }
 
@@ -54,9 +54,16 @@ h1 {
 
 .wrap .find {
     padding: 0 5px;
-    color: #6941D9;
+    color: #6941d9;
 }
 
 .wrap a:hover .find {
     text-decoration: underline;
+}
+
+/* 모바일 css */
+@media all and (max-width: 767px) {
+    .login_form input {
+        width: 200px;
+    }
 }

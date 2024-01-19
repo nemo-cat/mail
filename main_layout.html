@@ -1,53 +1,54 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mail</title>
-    <link rel="stylesheet" href="style/main.css">
-    <link rel="stylesheet" href="style/style.css">
-</head>
-<body>
-    <div class="wrap">
-        <div class="left_section">
-            <div class="right_top">
-                <h1><span class="hide">로고</span></h1>
-                <div class="top_btn">
-                    <a href="write.html" class="writeMail">메일쓰기</a>
-                    <a href="write.html" class="toMe">내게쓰기</a>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>mail</title>
+        <link rel="stylesheet" href="style/default.css" />
+        <link rel="stylesheet" href="style/main.css" />
+        <link rel="stylesheet" href="style/style.css" />
+    </head>
+    <body>
+        <div class="wrap">
+            <section class="left_section">
+                <div class="right_top">
+                    <h1>
+                        <a href=""><span class="hide">로고</span></a>
+                    </h1>
+                    <div class="top_btn">
+                        <a href="write.html" class="writeMail">메일쓰기</a>
+                        <a href="write.html" class="toMe">내게쓰기</a>
+                    </div>
+                    <ul class="gnb_menu">
+                        <li class="normal" id="allMailBox"><a href="">전체메일</a></li>
+                        <li class="active" id="inMailBox"><a href="">받은메일함</a></li>
+                        <li class="normal" id="sentMailBox"><a href="">보낸메일함</a></li>
+                        <li class="normal" id="tempoaryMailBox"><a href="">임시보관함</a></li>
+                        <li class="normal" id="toMeMailBox"><a href="">내게쓴메일함</a></li>
+                    </ul>
                 </div>
-                <ul class="gnb_menu">
-                    <li><a href="">전체메일</a></li>
-                    <li class="active"><a href="">받은메일함</a></li>
-                    <li><a href="">보낸메일함</a></li>
-                    <li><a href="">임시보관함</a></li>
-                    <li><a href="">내게쓴메일함</a></li>
-                </ul>
-            </div>
-        <div class="right_bottom">
-            <div class="bottom_btn">
-                <button>로그아웃</button>
-            </div>
+                <div class="right_bottom">
+                    <div class="bottom_btn">
+                        <button><a href="login.html">로그아웃</a></button>
+                    </div>
+                </div>
+            </section>
+            <section class="right_section">
+                <div class="search_box">
+                    <input type="text" placeholder="검색어를 입력하세요" />
+                    <button class="search_btn"><span class="hide">검색</span></button>
+                </div>
+                <div class="content"></div>
+                <div class="left_btm">
+                    <ol>
+                        <li><button class="active">1</button></li>
+                        <li><button class="normal">2</button></li>
+                        <li><button class="normal">3</button></li>
+                        <li><button class="normal">4</button></li>
+                        <li><button class="normal">5</button></li>
+                    </ol>
+                </div>
+            </section>
         </div>
-        </div>
-        <div class="right_section">
-            <div class="search_box">
-                <input type="text" placeholder="검색어를 입력하세요">
-                <button class="search_btn"><span class="hide">검색</span></button>
-            </div>
-            <div class="content">
-            
-            </div>
-            <div class="left_btm">
-                <ol>
-                    <li><button class="active">1</button></li>
-                    <li><button class="normal">2</button></li>
-                    <li><button class="normal">3</button></li>
-                    <li><button class="normal">4</button></li>
-                    <li><button class="normal">5</button></li>
-                </ol>
-            </div>
-        </div>
-    </div>
-</body>
+    </body>
 </html>

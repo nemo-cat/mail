@@ -1,243 +1,421 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mail</title>
-    <link rel="stylesheet" href="style/main.css">
-    <link rel="stylesheet" href="style/style.css">
-</head>
-<body>
-    <div class="wrap">
-        <div class="left_section">
-            <div class="right_top">
-                <h1><span class="hide">로고</span></h1>
-                <div class="top_btn">
-                    <a href="write.html" class="writeMail">메일쓰기</a>
-                   <a href="write.html" class="toMe">내게쓰기</a>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>mail</title>
+        <link rel="stylesheet" href="style/default.css" />
+        <link rel="stylesheet" href="style/main.css" />
+        <link rel="stylesheet" href="style/style.css" />
+    </head>
+    <body>
+        <div class="wrap">
+            <section class="left_section">
+                <div class="right_top">
+                    <h1>
+                        <a href=""><span class="hide">로고</span></a>
+                    </h1>
+                    <div class="top_btn">
+                        <a href="write.html" class="writeMail">메일쓰기</a>
+                        <a href="write.html" class="toMe">내게쓰기</a>
+                    </div>
+                    <ul class="gnb_menu">
+                        <li class="normal allMailBox"><a href="">전체메일</a></li>
+                        <li class="active inMailBox"><a href="">받은메일함</a></li>
+                        <li class="normal sentMailBox"><a href="">보낸메일함</a></li>
+                        <li class="normal tempoaryMailBox"><a href="">임시보관함</a></li>
+                        <li class="normal toMeMailBox"><a href="">내게쓴메일함</a></li>
+                    </ul>
                 </div>
-                <ul class="gnb_menu">
-                    <li><a href="">전체메일</a></li>
-                    <li class="active"><a href="">받은메일함</a></li>
-                    <li><a href="">보낸메일함</a></li>
-                    <li><a href="">임시보관함</a></li>
-                    <li><a href="">내게쓴메일함</a></li>
+                <div class="right_bottom">
+                    <div class="bottom_btn">
+                        <button><a href="login.html">로그아웃</a></button>
+                    </div>
+                </div>
+            </section>
+            <section class="right_section">
+                <div class="search_box">
+                    <input type="text" placeholder="검색어를 입력하세요" />
+                    <button class="search_btn"><span class="hide">검색</span></button>
+                </div>
+                <ul class="gnb_menu_mb">
+                    <li class="normal allMailBox"><a href="">전체메일</a></li>
+                    <li class="active inMailBox"><a href="">받은메일함</a></li>
+                    <li class="normal sentMailBox"><a href="">보낸메일함</a></li>
+                    <li class="normal tempoaryMailBox"><a href="">임시보관함</a></li>
+                    <li class="normal toMeMailBox"><a href="">내게쓴메일함</a></li>
                 </ul>
-            </div>
-        <div class="right_bottom">
-            <div class="bottom_btn">
-                <button><a href="login.html">로그아웃</a></button>
-            </div>
+                <div class="content">
+                    <!-- h2 안에 내용 받아오기 -->
+                    <h2 class="content_tit">
+                        받은메일함<span><span class="color">12</span>/58</span>
+                    </h2>
+                    <div class="content_tit_mb">
+                        <h2>
+                            받은메일함<span><span class="color">12</span>/58</span>
+                        </h2>
+                        <button><span class="hide">메뉴</span></button>
+                    </div>
+                    <ul class="mail_list">
+                        <li>
+                            <div class="mail_icon_box">
+                                <div>
+                                    <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                                </div>
+                                <div id="mail_ico3"><span class="hide">읽음</span></div>
+                                <div id="mail_ico4"><span class="hide">첨부파일</span></div>
+                            </div>
+                            <a href="read.html">
+                                <div><span class="writer">작성자</span>메일제목</div>
+                                <span class="mail_date">2024.01.16</span>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="mail_icon_box">
+                                <div>
+                                    <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                                </div>
+                                <div id="mail_ico3"><span class="hide">읽음</span></div>
+                                <div id="mail_ico4"><span class="hide">첨부파일</span></div>
+                            </div>
+                            <a href="read.html">
+                                <div><span class="writer">작성자</span>메일제목</div>
+                                <span class="mail_date">2024.01.16</span>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="mail_icon_box">
+                                <div>
+                                    <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                                </div>
+                                <div id="mail_ico3"><span class="hide">읽음</span></div>
+                                <div id="mail_ico4"><span class="hide">첨부파일</span></div>
+                            </div>
+                            <a href="read.html">
+                                <div><span class="writer">작성자</span>메일제목</div>
+                                <span class="mail_date">2024.01.16</span>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="mail_icon_box">
+                                <div>
+                                    <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                                </div>
+                                <div id="mail_ico3"><span class="hide">읽음</span></div>
+                                <div id="mail_ico4"><span class="hide">첨부파일</span></div>
+                            </div>
+                            <a href="read.html">
+                                <div><span class="writer">작성자</span>메일제목</div>
+                                <span class="mail_date">2024.01.16</span>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="mail_icon_box">
+                                <div>
+                                    <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                                </div>
+                                <div id="mail_ico3"><span class="hide">읽음</span></div>
+                                <div id="mail_ico4"><span class="hide">첨부파일</span></div>
+                            </div>
+                            <a href="read.html">
+                                <div><span class="writer">작성자</span>메일제목</div>
+                                <span class="mail_date">2024.01.16</span>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="mail_icon_box">
+                                <div>
+                                    <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                                </div>
+                                <div id="mail_ico3"><span class="hide">읽음</span></div>
+                                <div id="mail_ico4"><span class="hide">첨부파일</span></div>
+                            </div>
+                            <a href="read.html">
+                                <div><span class="writer">작성자</span>메일제목</div>
+                                <span class="mail_date">2024.01.16</span>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="mail_icon_box">
+                                <div>
+                                    <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                                </div>
+                                <div id="mail_ico3"><span class="hide">읽음</span></div>
+                                <div id="mail_ico4"><span class="hide">첨부파일</span></div>
+                            </div>
+                            <a href="read.html">
+                                <div><span class="writer">작성자</span>메일제목</div>
+                                <span class="mail_date">2024.01.16</span>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="mail_icon_box">
+                                <div>
+                                    <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                                </div>
+                                <div id="mail_ico3"><span class="hide">읽음</span></div>
+                                <div id="mail_ico4"><span class="hide">첨부파일</span></div>
+                            </div>
+                            <a href="read.html">
+                                <div><span class="writer">작성자</span>메일제목</div>
+                                <span class="mail_date">2024.01.16</span>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="mail_icon_box">
+                                <div>
+                                    <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                                </div>
+                                <div id="mail_ico3"><span class="hide">읽음</span></div>
+                                <div id="mail_ico4"><span class="hide">첨부파일</span></div>
+                            </div>
+                            <a href="read.html">
+                                <div><span class="writer">작성자</span>메일제목</div>
+                                <span class="mail_date">2024.01.16</span>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="mail_icon_box">
+                                <div>
+                                    <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                                </div>
+                                <div id="mail_ico3"><span class="hide">읽음</span></div>
+                                <div id="mail_ico4"><span class="hide">첨부파일</span></div>
+                            </div>
+                            <a href="read.html">
+                                <div><span class="writer">작성자</span>메일제목</div>
+                                <span class="mail_date">2024.01.16</span>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="mail_icon_box">
+                                <div>
+                                    <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                                </div>
+                                <div id="mail_ico3"><span class="hide">읽음</span></div>
+                                <div id="mail_ico4"><span class="hide">첨부파일</span></div>
+                            </div>
+                            <a href="read.html">
+                                <div><span class="writer">작성자</span>메일제목</div>
+                                <span class="mail_date">2024.01.16</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="mail_list_mb">
+                        <li>
+                            <div>
+                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                            </div>
+                            <a href="read.html">
+                                <div class="writer">작성자</div>
+                                <div>메일제목</div>
+                            </a>
+                            <div>
+                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                            </div>
+                            <a href="read.html">
+                                <div class="writer">작성자</div>
+                                <div>메일제목</div>
+                            </a>
+                            <div>
+                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                            </div>
+                            <a href="read.html">
+                                <div class="writer">작성자</div>
+                                <div>메일제목</div>
+                            </a>
+                            <div>
+                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                            </div>
+                            <a href="read.html">
+                                <div class="writer">작성자</div>
+                                <div>메일제목</div>
+                            </a>
+                            <div>
+                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                            </div>
+                            <a href="read.html">
+                                <div class="writer">작성자</div>
+                                <div>메일제목</div>
+                            </a>
+                            <div>
+                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                            </div>
+                            <a href="read.html">
+                                <div class="writer">작성자</div>
+                                <div>메일제목</div>
+                            </a>
+                            <div>
+                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                            </div>
+                            <a href="read.html">
+                                <div class="writer">작성자</div>
+                                <div>메일제목</div>
+                            </a>
+                            <div>
+                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                            </div>
+                            <a href="read.html">
+                                <div class="writer">작성자</div>
+                                <div>메일제목</div>
+                            </a>
+                            <div>
+                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                            </div>
+                            <a href="read.html">
+                                <div class="writer">작성자</div>
+                                <div>메일제목</div>
+                            </a>
+                            <div>
+                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                            </div>
+                            <a href="read.html">
+                                <div class="writer">작성자</div>
+                                <div>메일제목</div>
+                            </a>
+                            <div>
+                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                            </div>
+                            <a href="read.html">
+                                <div class="writer">작성자</div>
+                                <div>메일제목</div>
+                            </a>
+                            <div>
+                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                            </div>
+                            <a href="read.html">
+                                <div class="writer">작성자</div>
+                                <div>메일제목</div>
+                            </a>
+                            <div>
+                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                            </div>
+                            <a href="read.html">
+                                <div class="writer">작성자</div>
+                                <div>메일제목</div>
+                            </a>
+                            <div>
+                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
+                            </div>
+                            <a href="read.html">
+                                <div class="writer">작성자</div>
+                                <div>메일제목</div>
+                            </a>
+                            <div>
+                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="left_btm">
+                    <ol>
+                        <li><button class="active">1</button></li>
+                        <li><button class="normal">2</button></li>
+                        <li><button class="normal">3</button></li>
+                        <li><button class="normal">4</button></li>
+                        <li><button class="normal">5</button></li>
+                    </ol>
+                </div>
+                <a href="write.html" class="write_btn_mb"></a>
+            </section>
         </div>
-        </div>
-        <div class="right_section">
-            <div class="search_box">
-                <input type="text" placeholder="검색어를 입력하세요">
-                <button class="search_btn"><span class="hide">검색</span></button>
-            </div>
-            <div class="content">
-                <!-- h2 안에 내용 받아오기 -->
-                <h2 class="content_tit">받은메일함<span><span class="color">12</span>/58</span></h2>
-                <ul class="mail_list">
-                    <li>
-                        <div class="mail_icon_box">
-                            <div><input type="checkbox" id="mail_ico1"><label for="mail_ico1"><span class="hide">선택</span></label></div>
-                            <div><input type="checkbox" id="mail_ico2"><label for="mail_ico2"><span class="hide">중요</span></label></div>
-                            <div id="mail_ico3"><span class="hide">읽음</span></div>
-                            <div id="mail_ico4"><span class="hide">첨부파일</span></div>
-                        </div>
-                        <a href="">
-                            <div><span class="writer">작성자</span>메일제목</div>
-                            <span class="mail_date">2024.01.16</span></a>
-                    </li>
-                    <li>
-                        <div class="mail_icon_box">
-                            <div><input type="checkbox" id="mail_ico1"><label for="mail_ico1"><span class="hide">선택</span></label></div>
-                            <div><input type="checkbox" id="mail_ico2"><label for="mail_ico2"><span class="hide">중요</span></label></div>
-                            <div id="mail_ico3"><span class="hide">읽음</span></div>
-                            <div id="mail_ico4"><span class="hide">첨부파일</span></div>
-                        </div>
-                        <a href="">
-                            <div><span class="writer">작성자</span>메일제목</div>
-                            <span class="mail_date">2024.01.16</span></a>
-                    </li>
-                    <li>
-                        <div class="mail_icon_box">
-                            <div><input type="checkbox" id="mail_ico1"><label for="mail_ico1"><span class="hide">선택</span></label></div>
-                            <div><input type="checkbox" id="mail_ico2"><label for="mail_ico2"><span class="hide">중요</span></label></div>
-                            <div id="mail_ico3"><span class="hide">읽음</span></div>
-                            <div id="mail_ico4"><span class="hide">첨부파일</span></div>
-                        </div>
-                        <a href="">
-                            <div><span class="writer">작성자</span>메일제목</div>
-                            <span class="mail_date">2024.01.16</span></a>
-                    </li>
-                    <li>
-                        <div class="mail_icon_box">
-                            <div><input type="checkbox" id="mail_ico1"><label for="mail_ico1"><span class="hide">선택</span></label></div>
-                            <div><input type="checkbox" id="mail_ico2"><label for="mail_ico2"><span class="hide">중요</span></label></div>
-                            <div id="mail_ico3"><span class="hide">읽음</span></div>
-                            <div id="mail_ico4"><span class="hide">첨부파일</span></div>
-                        </div>
-                        <a href="">
-                            <div><span class="writer">작성자</span>메일제목</div>
-                            <span class="mail_date">2024.01.16</span></a>
-                    </li>
-                    <li>
-                        <div class="mail_icon_box">
-                            <div><input type="checkbox" id="mail_ico1"><label for="mail_ico1"><span class="hide">선택</span></label></div>
-                            <div><input type="checkbox" id="mail_ico2"><label for="mail_ico2"><span class="hide">중요</span></label></div>
-                            <div id="mail_ico3"><span class="hide">읽음</span></div>
-                            <div id="mail_ico4"><span class="hide">첨부파일</span></div>
-                        </div>
-                        <a href="">
-                            <div><span class="writer">작성자</span>메일제목</div>
-                            <span class="mail_date">2024.01.16</span></a>
-                    </li>
-                    <li>
-                        <div class="mail_icon_box">
-                            <div><input type="checkbox" id="mail_ico1"><label for="mail_ico1"><span class="hide">선택</span></label></div>
-                            <div><input type="checkbox" id="mail_ico2"><label for="mail_ico2"><span class="hide">중요</span></label></div>
-                            <div id="mail_ico3"><span class="hide">읽음</span></div>
-                            <div id="mail_ico4"><span class="hide">첨부파일</span></div>
-                        </div>
-                        <a href="">
-                            <div><span class="writer">작성자</span>메일제목</div>
-                            <span class="mail_date">2024.01.16</span></a>
-                    </li>
-                    <li>
-                        <div class="mail_icon_box">
-                            <div><input type="checkbox" id="mail_ico1"><label for="mail_ico1"><span class="hide">선택</span></label></div>
-                            <div><input type="checkbox" id="mail_ico2"><label for="mail_ico2"><span class="hide">중요</span></label></div>
-                            <div id="mail_ico3"><span class="hide">읽음</span></div>
-                            <div id="mail_ico4"><span class="hide">첨부파일</span></div>
-                        </div>
-                        <a href="">
-                            <div><span class="writer">작성자</span>메일제목</div>
-                            <span class="mail_date">2024.01.16</span></a>
-                    </li>
-                    <li>
-                        <div class="mail_icon_box">
-                            <div><input type="checkbox" id="mail_ico1"><label for="mail_ico1"><span class="hide">선택</span></label></div>
-                            <div><input type="checkbox" id="mail_ico2"><label for="mail_ico2"><span class="hide">중요</span></label></div>
-                            <div id="mail_ico3"><span class="hide">읽음</span></div>
-                            <div id="mail_ico4"><span class="hide">첨부파일</span></div>
-                        </div>
-                        <a href="">
-                            <div><span class="writer">작성자</span>메일제목</div>
-                            <span class="mail_date">2024.01.16</span></a>
-                    </li>
-                    <li>
-                        <div class="mail_icon_box">
-                            <div><input type="checkbox" id="mail_ico1"><label for="mail_ico1"><span class="hide">선택</span></label></div>
-                            <div><input type="checkbox" id="mail_ico2"><label for="mail_ico2"><span class="hide">중요</span></label></div>
-                            <div id="mail_ico3"><span class="hide">읽음</span></div>
-                            <div id="mail_ico4"><span class="hide">첨부파일</span></div>
-                        </div>
-                        <a href="">
-                            <div><span class="writer">작성자</span>메일제목</div>
-                            <span class="mail_date">2024.01.16</span></a>
-                    </li>
-                    <li>
-                        <div class="mail_icon_box">
-                            <div><input type="checkbox" id="mail_ico1"><label for="mail_ico1"><span class="hide">선택</span></label></div>
-                            <div><input type="checkbox" id="mail_ico2"><label for="mail_ico2"><span class="hide">중요</span></label></div>
-                            <div id="mail_ico3"><span class="hide">읽음</span></div>
-                            <div id="mail_ico4"><span class="hide">첨부파일</span></div>
-                        </div>
-                        <a href="">
-                            <div><span class="writer">작성자</span>메일제목</div>
-                            <span class="mail_date">2024.01.16</span></a>
-                    </li>
-                    <li>
-                        <div class="mail_icon_box">
-                            <div><input type="checkbox" id="mail_ico1"><label for="mail_ico1"><span class="hide">선택</span></label></div>
-                            <div><input type="checkbox" id="mail_ico2"><label for="mail_ico2"><span class="hide">중요</span></label></div>
-                            <div id="mail_ico3"><span class="hide">읽음</span></div>
-                            <div id="mail_ico4"><span class="hide">첨부파일</span></div>
-                        </div>
-                        <a href="">
-                            <div><span class="writer">작성자</span>메일제목</div>
-                            <span class="mail_date">2024.01.16</span></a>
-                    </li>
-                    <li>
-                        <div class="mail_icon_box">
-                            <div><input type="checkbox" id="mail_ico1"><label for="mail_ico1"><span class="hide">선택</span></label></div>
-                            <div><input type="checkbox" id="mail_ico2"><label for="mail_ico2"><span class="hide">중요</span></label></div>
-                            <div id="mail_ico3"><span class="hide">읽음</span></div>
-                            <div id="mail_ico4"><span class="hide">첨부파일</span></div>
-                        </div>
-                        <a href="">
-                            <div><span class="writer">작성자</span>메일제목</div>
-                            <span class="mail_date">2024.01.16</span></a>
-                    </li>
-                    <li>
-                        <div class="mail_icon_box">
-                            <div><input type="checkbox" id="mail_ico1"><label for="mail_ico1"><span class="hide">선택</span></label></div>
-                            <div><input type="checkbox" id="mail_ico2"><label for="mail_ico2"><span class="hide">중요</span></label></div>
-                            <div id="mail_ico3"><span class="hide">읽음</span></div>
-                            <div id="mail_ico4"><span class="hide">첨부파일</span></div>
-                        </div>
-                        <a href="">
-                            <div><span class="writer">작성자</span>메일제목</div>
-                            <span class="mail_date">2024.01.16</span></a>
-                    </li>
-                    <li>
-                        <div class="mail_icon_box">
-                            <div><input type="checkbox" id="mail_ico1"><label for="mail_ico1"><span class="hide">선택</span></label></div>
-                            <div><input type="checkbox" id="mail_ico2"><label for="mail_ico2"><span class="hide">중요</span></label></div>
-                            <div id="mail_ico3"><span class="hide">읽음</span></div>
-                            <div id="mail_ico4"><span class="hide">첨부파일</span></div>
-                        </div>
-                        <a href="">
-                            <div><span class="writer">작성자</span>메일제목</div>
-                            <span class="mail_date">2024.01.16</span></a>
-                    </li>
-                    <li>
-                        <div class="mail_icon_box">
-                            <div><input type="checkbox" id="mail_ico1"><label for="mail_ico1"><span class="hide">선택</span></label></div>
-                            <div><input type="checkbox" id="mail_ico2"><label for="mail_ico2"><span class="hide">중요</span></label></div>
-                            <div id="mail_ico3"><span class="hide">읽음</span></div>
-                            <div id="mail_ico4"><span class="hide">첨부파일</span></div>
-                        </div>
-                        <a href="">
-                            <div><span class="writer">작성자</span>메일제목</div>
-                            <span class="mail_date">2024.01.16</span></a>
-                    </li>
-                    <li>
-                        <div class="mail_icon_box">
-                            <div><input type="checkbox" id="mail_ico1"><label for="mail_ico1"><span class="hide">선택</span></label></div>
-                            <div><input type="checkbox" id="mail_ico2"><label for="mail_ico2"><span class="hide">중요</span></label></div>
-                            <div id="mail_ico3"><span class="hide">읽음</span></div>
-                            <div id="mail_ico4"><span class="hide">첨부파일</span></div>
-                        </div>
-                        <a href="">
-                            <div><span class="writer">작성자</span>메일제목</div>
-                            <span class="mail_date">2024.01.16</span></a>
-                    </li>
-                    <li>
-                        <div class="mail_icon_box">
-                            <div><input type="checkbox" id="mail_ico1"><label for="mail_ico1"><span class="hide">선택</span></label></div>
-                            <div><input type="checkbox" id="mail_ico2"><label for="mail_ico2"><span class="hide">중요</span></label></div>
-                            <div id="mail_ico3"><span class="hide">읽음</span></div>
-                            <div id="mail_ico4"><span class="hide">첨부파일</span></div>
-                        </div>
-                        <a href="">
-                            <div><span class="writer">작성자</span>메일제목</div>
-                            <span class="mail_date">2024.01.16</span></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="left_btm">
-                <ol>
-                    <li><button class="active">1</button></li>
-                    <li><button class="normal">2</button></li>
-                    <li><button class="normal">3</button></li>
-                    <li><button class="normal">4</button></li>
-                    <li><button class="normal">5</button></li>
-                </ol>
-            </div>
-        </div>
-    </div>
-</body>
+    </body>
 </html>

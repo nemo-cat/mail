@@ -1,60 +1,8 @@
+.content_tit_mb,
+.gnb_menu_mb {
+    display: none;
+}
 /* 플렉스 위주로 레이아웃 배치하기  */
-@font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-
-ol, ul, li {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-body {
-    font-family: 'Pretendard-Regular';
-    font-size: 14px;
-    color: #333;
-    height: 100vh;
-    padding: 50px;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-button {
-    height: 50px;
-    border: none;
-    cursor: pointer;
-}
-
-
-.wrap {
-    display: flex;
-    height: 100%;
-    overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0 4px 13px rgba(0, 0,0,0.25);
-
-}
-
-.hide {
-    overflow: hidden;
-    display: block;
-    position: absolute;
-    border: 0;
-    width: 1px;
-    height: 1px;
-    clip: rect(1px, 1px, 1px, 1px);
-}
-
 /* ============================ */
 /* 오른쪽 섹션 */
 
@@ -69,7 +17,14 @@ button {
 }
 
 .left_section h1 {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
     height: 130px;
+}
+
+.left_section h1 a {
+    height: 60px;
     background: url(../images/logo.png) no-repeat center;
 }
 
@@ -79,7 +34,7 @@ button {
     padding: 0 0 20px;
 }
 
-.top_btn a{
+.top_btn a {
     display: block;
     width: 50%;
     line-height: 50px;
@@ -88,7 +43,7 @@ button {
 }
 
 .top_btn .writeMail {
-    background: #6941D9;
+    background: #6941d9;
     color: #fff;
     border-radius: 20px 0 0 20px;
 }
@@ -98,7 +53,6 @@ button {
     background-color: #fff;
     border: 1px solid #ddd;
 }
-
 
 .gnb_menu li {
     line-height: 50px;
@@ -111,28 +65,31 @@ button {
     padding: 0 20px 0 55px;
 }
 
-.gnb_menu li:nth-child(1){
+.gnb_menu li:nth-child(1) {
     background: url(../images/ico_mailList01_black.png) no-repeat left 20px center;
 }
-.gnb_menu li:nth-child(2){
+
+.gnb_menu li:nth-child(2) {
     background: url(../images/ico_mailList02_black.png) no-repeat left 20px center;
 }
-.gnb_menu li:nth-child(3){
+
+.gnb_menu li:nth-child(3) {
     background: url(../images/ico_mailList03_black.png) no-repeat left 20px center;
 }
-.gnb_menu li:nth-child(4){
+
+.gnb_menu li:nth-child(4) {
     background: url(../images/ico_mailList04_black.png) no-repeat left 20px center;
 }
-.gnb_menu li:nth-child(5){
+
+.gnb_menu li:nth-child(5) {
     background: url(../images/ico_mailList05_black.png) no-repeat left 20px center;
 }
 
 .gnb_menu li.active {
     color: #fff;
-    background: url(../images/ico_mailList02_whtie.png) no-repeat left 20px center #6941D9;
-
+    background: url(../images/ico_mailList02_whtie.png) no-repeat left 20px center #6941d9;
 }
-.gnb_menu li:hover {
+.gnb_menu li.normal:hover {
     background-color: #f3f3f3;
 }
 
@@ -141,12 +98,22 @@ button {
     justify-content: center;
 }
 
-
 .bottom_btn button {
+    background-color: transparent;
+}
+
+.bottom_btn button a {
+    display: block;
+    line-height: 50px;
     padding: 0 0 0 35px;
     font-size: 12px;
     color: #ddd;
     background: url(../images/ico_logout.png) no-repeat left;
+}
+
+.bottom_btn button a:hover {
+    color: #6941d9;
+    background-image: url(../images/ico_logout_hover.png);
 }
 
 /* ============================================================== */
@@ -158,8 +125,8 @@ button {
     justify-content: space-between;
     width: calc(100% - 250px);
     height: 100%;
-    background:#F5F9FC;
-    border-left: 1px solid #F3f4f6;
+    background: #f5f9fc;
+    border-left: 1px solid #f3f4f6;
 }
 
 /* 검색박스 */
@@ -179,7 +146,7 @@ button {
 }
 
 .search_box input::placeholder {
-    font-family: 'Pretendard-Regular';
+    font-family: "Pretendard-Regular";
     color: #ddd;
 }
 
@@ -209,8 +176,8 @@ button {
 /* 콘텐츠영역 */
 
 .content {
-height: calc(100% - 120px);
-padding: 0 20px;
+    height: calc(100% - 120px);
+    padding: 0 20px;
 }
 
 /* 콘텐츠 타이틀 */
@@ -228,12 +195,9 @@ padding: 0 20px;
 }
 
 .content .content_tit span .color {
-    color: #6941D9;
+    color: #6941d9;
     font-weight: 700;
 }
-
-
-
 
 /* ============================== */
 /* 왼쪽 하단 */
@@ -245,7 +209,7 @@ padding: 0 20px;
     box-shadow: -2px 0 15px rgba(54, 54, 54, 0.1);
 }
 
-.left_btm ol{
+.left_btm ol {
     display: flex;
     justify-content: center;
 }
@@ -264,8 +228,8 @@ padding: 0 20px;
 }
 
 .left_btm ol li button.active {
-    color: #9675FE;
-    border: 1px solid #9675FE;
+    color: #9675fe;
+    border: 1px solid #9675fe;
 }
 
 .left_btm ol li .normal:hover {
@@ -274,15 +238,113 @@ padding: 0 20px;
     color: #333;
 }
 
-/* 메일을 성공적으로 보냄 */
-.send_success_wrap {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    background: #fff;
+/* 태블릿 css */
+@media all and (max-width: 1024px) {
+    .left_section {
+        width: 200px;
+        padding: 20px;
+    }
+
+    .right_section {
+        width: calc(100% - 200px);
+    }
 }
 
-.send_success_wrap p {
-    padding: 20px 0;
+/* 모바일 css */
+@media all and (max-width: 767px) {
+    .left_section,
+    .search_box,
+    .mail_list {
+        display: none;
+    }
+
+    .right_section {
+        position: relative;
+        width: 100%;
+        background: #fff;
+        border-left: none;
+    }
+
+    .gnb_menu_mb {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 9;
+        /* display: block; */
+        width: 100%;
+        height: calc(100% - 100px);
+        background: #fff;
+    }
+
+    .gnb_menu_mb li {
+        line-height: 50px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .gnb_menu_mb li a {
+        display: block;
+        padding: 0 20px 0 55px;
+    }
+
+    .gnb_menu_mb li:nth-child(1) {
+        background: url(../images/ico_mailList01_black.png) no-repeat left 20px center;
+    }
+
+    .gnb_menu_mb li:nth-child(2) {
+        background: url(../images/ico_mailList02_black.png) no-repeat left 20px center;
+    }
+
+    .gnb_menu_mb li:nth-child(3) {
+        background: url(../images/ico_mailList03_black.png) no-repeat left 20px center;
+    }
+
+    .gnb_menu_mb li:nth-child(4) {
+        background: url(../images/ico_mailList04_black.png) no-repeat left 20px center;
+    }
+
+    .gnb_menu_mb li:nth-child(5) {
+        background: url(../images/ico_mailList05_black.png) no-repeat left 20px center;
+    }
+
+    /* 콘텐츠 영역 */
+    .content {
+        height: 100%;
+        padding: 0;
+    }
+
+    .content .content_tit {
+        display: none;
+    }
+
+    .content_tit_mb {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+        padding: 0 10px;
+        line-height: 60px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .content_tit_mb h2 {
+        font-size: 28px;
+        font-weight: 600;
+    }
+
+    .content_tit_mb span {
+        padding: 0 0 0 10px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .content_tit_mb span .color {
+        color: #6941d9;
+        font-weight: 700;
+    }
+
+    .content_tit_mb button {
+        width: 24px;
+        height: 24px;
+        background: url(../images/ico_menu.png);
+    }
 }
