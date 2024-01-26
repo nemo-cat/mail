@@ -20,11 +20,11 @@
                         <a href="write.html" class="toMe">내게쓰기</a>
                     </div>
                     <ul class="gnb_menu">
-                        <li class="normal" id="allMailBox"><a href="">전체메일</a></li>
-                        <li class="active" id="inMailBox"><a href="">받은메일함</a></li>
-                        <li class="normal" id="sentMailBox"><a href="">보낸메일함</a></li>
-                        <li class="normal" id="tempoaryMailBox"><a href="">임시보관함</a></li>
-                        <li class="normal" id="toMeMailBox"><a href="">내게쓴메일함</a></li>
+                        <li onclick="changeClass(this, 1, this.id)" class="normal" id="allMailBox"><a href="index.html">전체메일</a></li>
+                        <li onclick="changeClass(this, 2, this.id)" class="active" id="inMailBox"><a href="index.html">받은메일함</a></li>
+                        <li onclick="changeClass(this, 3, this.id)" class="normal" id="sendMailBox"><a href="index.html">보낸메일함</a></li>
+                        <li onclick="changeClass(this, 4, this.id)" class="normal" id="tempoaryMailBox"><a href="index.html">임시보관함</a></li>
+                        <li onclick="changeClass(this, 5, this.id)" class="normal" id="toMeMailBox"><a href="index.html">내게쓴메일함</a></li>
                     </ul>
                 </div>
                 <div class="right_bottom">
@@ -48,20 +48,23 @@
                         <div class="input_box">
                             <div class="input_recipient write_input">
                                 <p>받는사람</p>
-                                <input type="email" />
+                                <input onblur="writeReceiver()" type="email" id="sendMailReceiver" />
                             </div>
                             <div class="input_subject write_input">
                                 <p>제목</p>
-                                <input type="text" />
+                                <input onblur="writeTitle()" type="text" id="sendMailTitle" />
                             </div>
                         </div>
-                        <textarea></textarea>
+                        <textarea onblur="writeContent()" id="sendMailContent"></textarea>
                     </div>
                 </div>
                 <div class="left_btm send_btm">
-                    <button class="send_btn"><a href="success.html">보내기</a></button>
+                    <button class="send_btn" onclick="statusChange()"><a href="success.html">보내기</a></button>
                 </div>
             </section>
         </div>
+        <!-- script -->
+        <script src="script/script.js"></script>
+        <script src="script/writeScript.js"></script>
     </body>
 </html>
