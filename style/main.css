@@ -55,14 +55,11 @@
 }
 
 .gnb_menu li {
+    padding: 0 20px 0 55px;
     line-height: 50px;
     border-radius: 20px;
     background: #f3f3f3;
-}
-
-.gnb_menu li a {
-    display: block;
-    padding: 0 20px 0 55px;
+    cursor: pointer;
 }
 
 .gnb_menu li:nth-child(1) {

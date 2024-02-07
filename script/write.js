@@ -39,7 +39,7 @@ function writeMail() {
         content: "",
         date: todayDate,
         mailBox: "tempoaryMailBox", //임시보관함에 저장 후 전송시 보낸메일함
-        status: 0, //전송 눌러야 1로 변경, mailBox도 보낸메일함으로 이동
+        status: 0,
     });
 }
 

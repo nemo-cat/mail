@@ -30,18 +30,18 @@
             <section class="left_section">
                 <div class="right_top">
                     <h1>
-                        <a href=""><span class="hide">로고</span></a>
+                        <a href="index.html"><span class="hide">로고</span></a>
                     </h1>
                     <div class="top_btn">
                         <a href="write.html" class="writeMail">메일쓰기</a>
                         <a href="write.html" class="toMe">내게쓰기</a>
                     </div>
                     <ul class="gnb_menu">
-                        <li onclick="changeClass(this, 1, this.id)" class="normal" id="allMailBox"><a href="#none">전체메일</a></li>
-                        <li onclick="changeClass(this, 2, this.id)" class="active" id="inMailBox"><a href="#none">받은메일함</a></li>
-                        <li onclick="changeClass(this, 3, this.id)" class="normal" id="sendMailBox"><a href="#none">보낸메일함</a></li>
-                        <li onclick="changeClass(this, 4, this.id)" class="normal" id="tempoaryMailBox"><a href="#none">임시보관함</a></li>
-                        <li onclick="changeClass(this, 5, this.id)" class="normal" id="toMeMailBox"><a href="#none">내게쓴메일함</a></li>
+                        <li onclick="changeClass(this, 1, this.id)" class="normal" id="allMailBox"><a>전체메일</a></li>
+                        <li onclick="changeClass(this, 2, this.id)" class="active" id="inMailBox"><a>받은메일함</a></li>
+                        <li onclick="changeClass(this, 3, this.id)" class="normal" id="sendMailBox"><a>보낸메일함</a></li>
+                        <li onclick="changeClass(this, 4, this.id)" class="normal" id="tempoaryMailBox"><a>임시보관함</a></li>
+                        <li onclick="changeClass(this, 5, this.id)" class="normal" id="toMeMailBox"><a>내게쓴메일함</a></li>
                     </ul>
                 </div>
                 <div class="right_bottom">
@@ -58,15 +58,18 @@
                 <ul class="gnb_menu_mb">
                     <li class="normal allMailBox"><a href="">전체메일</a></li>
                     <li class="active inMailBox"><a href="">받은메일함</a></li>
-                    <li class="normal sentMailBox"><a href="">보낸메일함</a></li>
+                    <li class="normal sendMailBox"><a href="">보낸메일함</a></li>
                     <li class="normal tempoaryMailBox"><a href="">임시보관함</a></li>
                     <li class="normal toMeMailBox"><a href="">내게쓴메일함</a></li>
                 </ul>
                 <div class="content">
                     <!-- h2 안에 내용 받아오기 -->
-                    <h2 class="content_tit" id="content_tit">
-                        받은메일함<span><span class="color">12</span>/58</span>
-                    </h2>
+                    <div class="content_tit_pc">
+                        <h2 class="content_tit" id="content_tit">받은메일함</h2>
+                        <div class="mail_conunt" id="mail_conunt"><span class="color">12</span>/58</div>
+                        <button id="delete_btn" onclick="deleteMailList()"><span class="hide">삭제</span></button>
+                    </div>
+
                     <div class="content_tit_mb" id="content_tit_mb">
                         <h2>
                             받은메일함<span><span class="color">12</span>/58</span>
@@ -275,6 +278,7 @@
             </section>
         </div>
         <!-- script -->
-        <script src="script/script.js"></script>
+        <script src="script/default.js"></script>
+        <script src="script/index.js"></script>
     </body>
 </html>

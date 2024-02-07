@@ -3,22 +3,37 @@
     display: none;
 }
 /* ============ 메일함 스타일 ============ */
-.content .content_tit {
+.content .content_tit_pc {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    position: relative;
     height: 70px;
+}
+.content_tit_pc .content_tit {
     line-height: 70px;
     font-size: 28px;
     font-weight: 600;
 }
 
-.content .content_tit span {
+.content_tit_pc .mail_conunt {
     padding: 0 0 0 10px;
     font-size: 14px;
     font-weight: 400;
 }
 
-.content .content_tit span .color {
+.content_tit_pc .mail_conunt .color {
     color: #6941d9;
     font-weight: 700;
+}
+
+.content_tit_pc #delete_btn {
+    position: absolute;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: url(../images/ico_delete_active.png) no-repeat center #fff;
 }
 
 /* 메일 리스트 영역 */
@@ -99,22 +114,22 @@ input[type="checkbox"] + label {
     height: 24px;
     background: no-repeat center;
 }
-
+/* 
 #mail_ico1 + label {
-    background-image: url(../images/ico_checkbox_normal.png);
+    background-image: url("../images/ico_checkbox_normal.png");
 }
 
 #mail_ico2 + label {
-    background-image: url(../images/ico_favorite_normal.png);
+    background-image: url("../images/ico_favorite_normal.png");
 }
 
 #mail_ico3 {
-    background: url(../images/ico_mail_normal.png) no-repeat center;
+    background: url("../images/ico_mail_normal.png") no-repeat center;
 }
 
 #mail_ico4 {
     background: url(../images/ico_file.png) no-repeat center;
-}
+} */
 
 /*====================================*/
 
