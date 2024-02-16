@@ -59,12 +59,19 @@
                     </div>
                 </div>
                 <div class="left_btm send_btm">
-                    <button class="send_btn" onclick="statusChange()"><a href="success.html">보내기</a></button>
+                    <button class="send_btn" onclick="statusChange()">보내기</button>
                 </div>
             </section>
         </div>
         <!-- script -->
         <script src="script/default.js"></script>
         <script src="script/write.js"></script>
+        <script>
+            window.onload = function(){
+                loadLocalStorage();
+                //임시메일 하나 생성
+                writeMail();
+            }
+        </script>
     </body>
 </html>

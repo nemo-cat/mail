@@ -280,5 +280,13 @@
         <!-- script -->
         <script src="script/default.js"></script>
         <script src="script/index.js"></script>
+        <script>
+            window.onload = function(){
+                loadLocalStorage();
+
+                /* 기본값으로 받은메일함을 보여줌 */
+                addMailListInMailBox();
+            }
+        </script>
     </body>
 </html>

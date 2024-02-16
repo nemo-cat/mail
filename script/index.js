@@ -3,37 +3,7 @@ let checkedLi = []; //선택한 메일 리스트의 key값을 저장하는 배�
 let allMailCount; // 전체 메일 카운트
 let notReadMailCount; //안읽은 메일 카운트
 
-/* 받은 메일함과, 내게쓴 메일함에 임시 데이터 추가 */
-for (let i = 0; i < 10; i++) {
-    addMailData({
-        key: key,
-        sender: "qjxj1112@naver.com",
-        receiver: "oscarmk48@naver.com",
-        title: "행운의편지" + i,
-        content: "ㅈㄱㄴ",
-        date: todayDate,
-        mailBox: "inMailBox",
-        status: 0, //안읽음0 읽으면 1
-    });
-}
-
-for (let i = 0; i < 10; i++) {
-    addMailData({
-        key: key,
-        sender: "qjxj1112@naver.com",
-        receiver: "oscarmk48@naver.com",
-        title: "내게쓴메일" + i,
-        content: "ㅈㄱㄴ",
-        date: todayDate,
-        mailBox: "toMeMailBox",
-        status: 0,
-    });
-}
-
-/* 기본값으로 받은메일함을 보여줌 */
-addMailListInMailBox();
-
-/* 메일의 갯수를 카운트하는 함수 */
+/* 메일의 갯수를 카운트하는 함수
 function countMail(mailBoxName) {
     //카운트 초기화
     allMailCount = 0;
@@ -49,6 +19,28 @@ function countMail(mailBoxName) {
             if (mailList[i].status == 0) {
                 notReadMailCount++; // 안읽은 메일 수 증가
             }
+        }
+    }
+
+    document.getElementById("mail_conunt").innerHTML = `<span class="color">${notReadMailCount}</span>/${allMailCount}`;
+}
+ */
+
+/* 메일 카운트 li갯수로. */
+function countMail() {
+    let ulList = document.querySelector(".mail_list");
+    let liCount = ulList.childElementCount;
+    let liIndex;
+
+    //카운트 초기화
+    allMailCount = liCount;
+    notReadMailCount = 0;
+
+    //메일 리스트 길이만큼 돌면서 카운트 증가
+    for (let i = 0; i < liCount; i++) {
+        liIndex = ulList.children[i].classList.value;
+        if (mailList[liIndex].status == 0) {
+            notReadMailCount++; // 안읽은 메일 수 증가
         }
     }
 
@@ -77,25 +69,25 @@ function addMailBox(mailBoxName) {
 /* 받은 메일함 */
 function addMailListInMailBox() {
     addMailBox("inMailBox");
-    countMail("inMailBox");
+    countMail();
 }
 
 /* 보낸 메일함 */
 function addMailListSendMailBox() {
     addMailBox("sendMailBox");
-    countMail("sendMailBox");
+    countMail();
 }
 
 /* 내게 쓴 메일함 */
 function addMailListToMeBox() {
     addMailBox("toMeMailBox");
-    countMail("toMeMailBox");
+    countMail();
 }
 
 /* 임시 메일함 */
 function addMailListTempoaryMailBox() {
     addMailBox("tempoaryMailBox");
-    countMail("tempoaryMailBox");
+    countMail();
 }
 
 /* 전체 메일함 */
@@ -112,7 +104,7 @@ function addMailListAll() {
             addMailHtmlText(sender, title, date, key);
         }
     }
-    countMail("allMailBox");
+    countMail();
 }
 
 /* 메일함 초기화 */
@@ -187,6 +179,8 @@ function readMail(e) {
         let thisMailBox = mailList[liKey].mailBox; //클릭한 메일이 어떤 메일함에 있는지 저장
         countMail(thisMailBox);
     }
+
+    mailListToLocalStorage();
 }
 
 /* 선택한 li를 배열에 담는함수 */
@@ -227,6 +221,7 @@ function deleteMailList() {
         //checkedLi 배열에서 키 값을 추출하여 liKey에 저장
         deleteKey = checkedLi[i];
         delete mailList[deleteKey];
+        /* mailList.splice(deleteKey, 1); */
         deleteHtmlElement = document.getElementById("mailList" + deleteKey);
         deleteHtmlElement.remove();
     }
@@ -234,4 +229,5 @@ function deleteMailList() {
 
     // 메일함 스토리지 갱신
     mailListToLocalStorage();
+    countMail();
 }

@@ -16,10 +16,40 @@ let mailMap = new Map();
 //메일 데이터를 리스트와 맵에 담는 함수
 function addMailData(mailObject) {
     mailList.push(mailObject);
-    mailMap[mailObject.key] = mailList;
+    mailMap[mailObject.key] = mailObject;
     key += 1;
-    mailListToLocalStorage();
 }
+
+function addTestData()
+{
+    /* 받은 메일함과, 내게쓴 메일함에 임시 데이터 추가 */
+    for (let i = 0; i < 10; i++) {
+        addMailData({
+            key: key,
+            sender: "qjxj1112@naver.com",
+            receiver: "oscarmk48@naver.com",
+            title: "행운의편지" + i,
+            content: "ㅈㄱㄴ",
+            date: todayDate,
+            mailBox: "inMailBox",
+            status: 0, //안읽음0 읽으면 1
+        });
+    }
+
+    for (let i = 0; i < 10; i++) {
+        addMailData({
+            key: key,
+            sender: "qjxj1112@naver.com",
+            receiver: "oscarmk48@naver.com",
+            title: "내게쓴메일" + i,
+            content: "ㅈㄱㄴ",
+            date: todayDate,
+            mailBox: "toMeMailBox",
+            status: 0,
+        });
+    }
+}
+
 
 /* ========== 
 GNB 메뉴 클릭시, class변경(css) 및
@@ -64,7 +94,35 @@ function changeClass(e, listIdx, clickId) {
     }
 }
 
-/* 로컬스토리지 */
+
+//로컬스토리지로부터 데이터를 불러오기
+function loadLocalStorage()
+{
+    let loadMailList = window.localStorage.getItem('mailList');
+
+    //로컬스토리지에 데이터가 없으면 로컬스토리지에 데이터 생성해주기
+    if(!loadMailList)
+    {
+        addTestData();
+        mailListToLocalStorage();
+    }
+    //로컬스토리지에 데이터가 있으면 데이터 불러오기
+    else
+    {
+        let loadMailListObject = JSON.parse(loadMailList);
+        mailList = loadMailListObject;
+
+        for(let i = 0 ; i < mailList.length ; i++)
+        {
+            mailMap[mailList[i].key] = mailList[i];
+        }
+
+        key = mailList[mailList.length - 1].key + 1;
+    }
+    
+}
+
+/* 로컬스토리지 저장 */
 function mailListToLocalStorage() {
     let mailListString = JSON.stringify(mailList);
     let mailMapString = JSON.stringify(mailMap);
