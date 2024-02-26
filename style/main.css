@@ -82,13 +82,30 @@
     background: url(../images/ico_mailList05_black.png) no-repeat left 20px center;
 }
 
-.gnb_menu li.active {
-    color: #fff;
+.gnb_menu #allMailBox.active {
+    background: url(../images/ico_mailList01_whtie.png) no-repeat left 20px center #6941d9;
+}
+.gnb_menu #inMailBox.active {
     background: url(../images/ico_mailList02_whtie.png) no-repeat left 20px center #6941d9;
 }
+.gnb_menu #sendMailBox.active {
+    background: url(../images/ico_mailList03_whtie.png) no-repeat left 20px center #6941d9;
+}
+.gnb_menu #tempoaryMailBox.active {
+    background: url(../images/ico_mailList04_whtie.png) no-repeat left 20px center #6941d9;
+}
+.gnb_menu #toMeMailBox.active {
+    background: url(../images/ico_mailList05_whtie.png) no-repeat left 20px center #6941d9;
+}
+
 .gnb_menu li.normal:hover {
     background-color: #f3f3f3;
 }
+
+.gnb_menu li.active {
+    color: #fff;
+}
+
 
 .right_bottom {
     display: flex;

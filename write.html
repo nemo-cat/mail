@@ -44,7 +44,7 @@
                         <a href="index.html" class="close_btn"><span class="hide">닫기</span></a>
                         <a href="success.html" class="send_mb_btn"><span class="hide">보내기</span></a>
                     </div>
-                    <div class="writeRead_wrap">
+                    <div class="writeRead_wrap write_wrap">
                         <div class="input_box">
                             <div class="input_recipient write_input">
                                 <p>받는사람</p>
@@ -68,9 +68,11 @@
         <script src="script/write.js"></script>
         <script>
             window.onload = function(){
-                loadLocalStorage();
-                //임시메일 하나 생성
-                writeMail();
+                checkLocalStorage();
+                writeNewMail();
+                /*임시메일 하나 생성
+                
+            */
             }
         </script>
     </body>
