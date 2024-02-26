@@ -3,23 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>mail</title>
-        <!-- ajax CDN -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <!-- style link -->
-        <link rel="stylesheet" href="style/default.css" />
-        <link rel="stylesheet" href="style/main.css" />
-        <link rel="stylesheet" href="style/style.css" />
-    </head>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>mail</title>
-        <!-- jQUery CDN -->
-        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-        <!-- ajax CDN -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+        <title>Sound 메일</title>
         <!-- style link -->
         <link rel="stylesheet" href="style/default.css" />
         <link rel="stylesheet" href="style/main.css" />
@@ -33,20 +17,15 @@
                         <a href="index.html"><span class="hide">로고</span></a>
                     </h1>
                     <div class="top_btn">
-                        <a href="write.html" class="writeMail">메일쓰기</a>
-                        <a href="write.html" class="toMe">내게쓰기</a>
+                        <button onclick="writeMail(this)" class="writeMail">메일쓰기</button>
+                        <button onclick="writeMail(this)" class="toMe">내게쓰기</button>
                     </div>
                     <ul class="gnb_menu">
-                        <li onclick="changeContent(this.id)" class="normal" id="allMailBox"><a>전체메일</a></li>
-                        <li onclick="changeContent(this.id)" class="active" id="inMailBox"><a>받은메일함</a></li>
-                        <li onclick="changeContent(this.id)" class="normal" id="sendMailBox"><a>보낸메일함</a></li>
-                        <li onclick="changeContent(this.id)" class="normal" id="tempoaryMailBox"><a>임시보관함</a></li>
-                        <li onclick="changeContent(this.id)" class="normal" id="toMeMailBox"><a>내게쓴메일함</a></li>
-                        <!-- <li onclick="changeClass(this, 1, this.id)" class="normal" id="allMailBox"><a>전체메일</a></li>
-                        <li onclick="changeClass(this, 2, this.id)" class="active" id="inMailBox"><a>받은메일함</a></li>
-                        <li onclick="changeClass(this, 3, this.id)" class="normal" id="sendMailBox"><a>보낸메일함</a></li>
-                        <li onclick="changeClass(this, 4, this.id)" class="normal" id="tempoaryMailBox"><a>임시보관함</a></li>
-                        <li onclick="changeClass(this, 5, this.id)" class="normal" id="toMeMailBox"><a>내게쓴메일함</a></li> -->
+                        <li onclick="changeContent(this.id)" class="normal" id="allMailBox">전체메일</li>
+                        <li onclick="changeContent(this.id)" class="active" id="inMailBox">받은메일함</li>
+                        <li onclick="changeContent(this.id)" class="normal" id="sendMailBox">보낸메일함</li>
+                        <li onclick="changeContent(this.id)" class="normal" id="tempoaryMailBox">임시보관함</li>
+                        <li onclick="changeContent(this.id)" class="normal" id="toMeMailBox">내게쓴메일함</li>
                     </ul>
                 </div>
                 <div class="right_bottom">
@@ -60,13 +39,6 @@
                     <input type="text" placeholder="검색어를 입력하세요" />
                     <button class="search_btn"><span class="hide">검색</span></button>
                 </div>
-                <ul class="gnb_menu_mb">
-                    <li class="normal allMailBox"><a href="">전체메일</a></li>
-                    <li class="active inMailBox"><a href="">받은메일함</a></li>
-                    <li class="normal sendMailBox"><a href="">보낸메일함</a></li>
-                    <li class="normal tempoaryMailBox"><a href="">임시보관함</a></li>
-                    <li class="normal toMeMailBox"><a href="">내게쓴메일함</a></li>
-                </ul>
                 <div class="content">
                     <!-- h2 안에 내용 받아오기 -->
                     <div class="content_tit_pc">
@@ -74,187 +46,11 @@
                         <div class="mail_conunt" id="mail_conunt"><span class="color">12</span>/58</div>
                         <button id="delete_btn" onclick="deleteMail()"><span class="hide">삭제</span></button>
                     </div>
-                    <div class="content_tit_mb" id="content_tit_mb">
-                        <h2>
-                            받은메일함<span><span class="color">12</span>/58</span>
-                        </h2>
-                        <button><span class="hide">메뉴</span></button>
-                    </div>
                     <div class="mailList_wrap">
                         <ul class="mail_list"></ul>
                     </div>
-                    <ul class="mail_list_mb">
-                        <li>
-                            <div>
-                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
-                            </div>
-                            <a href="read.html">
-                                <div class="writer">작성자</div>
-                                <div>메일제목</div>
-                            </a>
-                            <div>
-                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
-                            </div>
-                            <a href="read.html">
-                                <div class="writer">작성자</div>
-                                <div>메일제목</div>
-                            </a>
-                            <div>
-                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
-                            </div>
-                            <a href="read.html">
-                                <div class="writer">작성자</div>
-                                <div>메일제목</div>
-                            </a>
-                            <div>
-                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
-                            </div>
-                            <a href="read.html">
-                                <div class="writer">작성자</div>
-                                <div>메일제목</div>
-                            </a>
-                            <div>
-                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
-                            </div>
-                            <a href="read.html">
-                                <div class="writer">작성자</div>
-                                <div>메일제목</div>
-                            </a>
-                            <div>
-                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
-                            </div>
-                            <a href="read.html">
-                                <div class="writer">작성자</div>
-                                <div>메일제목</div>
-                            </a>
-                            <div>
-                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
-                            </div>
-                            <a href="read.html">
-                                <div class="writer">작성자</div>
-                                <div>메일제목</div>
-                            </a>
-                            <div>
-                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
-                            </div>
-                            <a href="read.html">
-                                <div class="writer">작성자</div>
-                                <div>메일제목</div>
-                            </a>
-                            <div>
-                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
-                            </div>
-                            <a href="read.html">
-                                <div class="writer">작성자</div>
-                                <div>메일제목</div>
-                            </a>
-                            <div>
-                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
-                            </div>
-                            <a href="read.html">
-                                <div class="writer">작성자</div>
-                                <div>메일제목</div>
-                            </a>
-                            <div>
-                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
-                            </div>
-                            <a href="read.html">
-                                <div class="writer">작성자</div>
-                                <div>메일제목</div>
-                            </a>
-                            <div>
-                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
-                            </div>
-                            <a href="read.html">
-                                <div class="writer">작성자</div>
-                                <div>메일제목</div>
-                            </a>
-                            <div>
-                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
-                            </div>
-                            <a href="read.html">
-                                <div class="writer">작성자</div>
-                                <div>메일제목</div>
-                            </a>
-                            <div>
-                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <input type="checkbox" id="mail_ico1" /><label for="mail_ico1"><span class="hide">선택</span></label>
-                            </div>
-                            <a href="read.html">
-                                <div class="writer">작성자</div>
-                                <div>메일제목</div>
-                            </a>
-                            <div>
-                                <input type="checkbox" id="mail_ico2" /><label for="mail_ico2"><span class="hide">중요</span></label>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
-                <div class="left_btm">
+                <div class="right_btm">
                     <ol>
                         <li><button class="active">1</button></li>
                         <li><button class="normal">2</button></li>
@@ -263,12 +59,12 @@
                         <li><button class="normal">5</button></li>
                     </ol>
                 </div>
-                <a href="write.html" class="write_btn_mb"></a>
             </section>
         </div>
         <!-- script -->
         <script src="script/default.js"></script>
         <script src="script/index.js"></script>
+        <script src="script/write.js"></script>
         <script>
             window.onload = function()
             {

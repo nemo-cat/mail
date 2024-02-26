@@ -1,11 +1,6 @@
-.content_tit_mb,
-.gnb_menu_mb {
-    display: none;
-}
-/* 플렉스 위주로 레이아웃 배치하기  */
+/* 플렉스 위주로 레이아웃 배치하기 */
 /* ============================ */
-/* 오른쪽 섹션 */
-
+/* 왼쪽 섹션 */
 .left_section {
     display: flex;
     flex-flow: nowrap column;
@@ -34,7 +29,7 @@
     padding: 0 0 20px;
 }
 
-.top_btn a {
+.top_btn button {
     display: block;
     width: 50%;
     line-height: 50px;
@@ -58,7 +53,6 @@
     padding: 0 20px 0 55px;
     line-height: 50px;
     border-radius: 20px;
-    background: #f3f3f3;
     cursor: pointer;
 }
 
@@ -85,15 +79,19 @@
 .gnb_menu #allMailBox.active {
     background: url(../images/ico_mailList01_whtie.png) no-repeat left 20px center #6941d9;
 }
+
 .gnb_menu #inMailBox.active {
     background: url(../images/ico_mailList02_whtie.png) no-repeat left 20px center #6941d9;
 }
+
 .gnb_menu #sendMailBox.active {
     background: url(../images/ico_mailList03_whtie.png) no-repeat left 20px center #6941d9;
 }
+
 .gnb_menu #tempoaryMailBox.active {
     background: url(../images/ico_mailList04_whtie.png) no-repeat left 20px center #6941d9;
 }
+
 .gnb_menu #toMeMailBox.active {
     background: url(../images/ico_mailList05_whtie.png) no-repeat left 20px center #6941d9;
 }
@@ -105,7 +103,6 @@
 .gnb_menu li.active {
     color: #fff;
 }
-
 
 .right_bottom {
     display: flex;
@@ -188,7 +185,6 @@
 }
 
 /* 콘텐츠영역 */
-
 .content {
     height: calc(100% - 120px);
     padding: 0 20px;
@@ -214,25 +210,26 @@
 }
 
 /* ============================== */
-/* 왼쪽 하단 */
+/* 오른쪽 하단 */
 
-.left_btm {
+.right_btm {
+    position: relative;
     height: 60px;
     line-height: 60px;
     background: #fff;
-    box-shadow: -2px 0 15px rgba(54, 54, 54, 0.1);
+
 }
 
-.left_btm ol {
+.right_btm ol {
     display: flex;
     justify-content: center;
 }
 
-.left_btm ol li ~ li {
+.right_btm ol li ~ li {
     padding-left: 10px;
 }
 
-.left_btm ol li button {
+.right_btm ol li button {
     width: 24px;
     height: 24px;
     border-radius: 5px;
@@ -241,12 +238,12 @@
     background: none;
 }
 
-.left_btm ol li button.active {
+.right_btm ol li button.active {
     color: #9675fe;
     border: 1px solid #9675fe;
 }
 
-.left_btm ol li .normal:hover {
+.right_btm ol li .normal:hover {
     border-radius: 24px;
     background-color: #f3f3f3;
     color: #333;
@@ -261,104 +258,5 @@
 
     .right_section {
         width: calc(100% - 200px);
-    }
-}
-
-/* 모바일 css */
-@media all and (max-width: 767px) {
-    .left_section,
-    .search_box,
-    .mail_list {
-        display: none;
-    }
-
-    .right_section {
-        position: relative;
-        width: 100%;
-        background: #fff;
-        border-left: none;
-    }
-
-    .gnb_menu_mb {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        z-index: 9;
-        /* display: block; */
-        width: 100%;
-        height: calc(100% - 100px);
-        background: #fff;
-    }
-
-    .gnb_menu_mb li {
-        line-height: 50px;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .gnb_menu_mb li a {
-        display: block;
-        padding: 0 20px 0 55px;
-    }
-
-    .gnb_menu_mb li:nth-child(1) {
-        background: url(../images/ico_mailList01_black.png) no-repeat left 20px center;
-    }
-
-    .gnb_menu_mb li:nth-child(2) {
-        background: url(../images/ico_mailList02_black.png) no-repeat left 20px center;
-    }
-
-    .gnb_menu_mb li:nth-child(3) {
-        background: url(../images/ico_mailList03_black.png) no-repeat left 20px center;
-    }
-
-    .gnb_menu_mb li:nth-child(4) {
-        background: url(../images/ico_mailList04_black.png) no-repeat left 20px center;
-    }
-
-    .gnb_menu_mb li:nth-child(5) {
-        background: url(../images/ico_mailList05_black.png) no-repeat left 20px center;
-    }
-
-    /* 콘텐츠 영역 */
-    .content {
-        height: 100%;
-        padding: 0;
-    }
-
-    .content .content_tit {
-        display: none;
-    }
-
-    .content_tit_mb {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 60px;
-        padding: 0 10px;
-        line-height: 60px;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .content_tit_mb h2 {
-        font-size: 28px;
-        font-weight: 600;
-    }
-
-    .content_tit_mb span {
-        padding: 0 0 0 10px;
-        font-size: 14px;
-        font-weight: 400;
-    }
-
-    .content_tit_mb span .color {
-        color: #6941d9;
-        font-weight: 700;
-    }
-
-    .content_tit_mb button {
-        width: 24px;
-        height: 24px;
-        background: url(../images/ico_menu.png);
     }
 }

@@ -60,10 +60,3 @@ h1 {
 .wrap a:hover .find {
     text-decoration: underline;
 }
-
-/* 모바일 css */
-@media all and (max-width: 767px) {
-    .login_form input {
-        width: 200px;
-    }
-}

@@ -199,6 +199,7 @@ legend,
 /* 태블릿 css */
 @media all and (max-width: 1024px) {
     body {
+        min-width: 600px;
         padding: 0;
     }
 
@@ -206,17 +207,5 @@ legend,
         border-radius: none;
         box-shadow: none;
         min-height: 550px;
-    }
-}
-/* 모바일 css */
-@media all and (max-width: 767px) {
-    body {
-        padding: 0;
-    }
-
-    .wrap {
-        border-radius: none;
-        box-shadow: none;
-        min-height: 100%;
     }
 }
