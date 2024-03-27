@@ -109,7 +109,22 @@
     justify-content: center;
 }
 
-.bottom_btn button {
+.bottom_btn a {
+    display: block;
+    line-height: 50px;
+    padding: 0 0 0 35px;
+    font-size: 12px;
+    color: #ddd;
+    background: url(../images/ico_logout.png) no-repeat left;
+}
+
+.bottom_btn a:hover {
+    color: #6941d9;
+    background-image: url(../images/ico_logout_hover.png);
+}
+
+
+/* .bottom_btn button {
     background-color: transparent;
 }
 
@@ -126,6 +141,7 @@
     color: #6941d9;
     background-image: url(../images/ico_logout_hover.png);
 }
+ */
 
 /* ============================================================== */
 /* 오른쪽 섹션 */

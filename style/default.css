@@ -204,7 +204,7 @@ legend,
     }
 
     .wrap {
-        border-radius: none;
+        border-radius: 0;
         box-shadow: none;
         min-height: 550px;
     }
