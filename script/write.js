@@ -114,7 +114,7 @@ function sendMail(index)
     </div>
     <div class="content success_content">
         <div class="send_success">
-            <img src="images/ico_mailsend.png" alt="" />
+            <img src="/images/ico_mailsend.png" alt="" />
         </div>
         <p>메일을 성공적으로 보냈습니다.</p>
         <button><a href="index.html">확인</a></button>
