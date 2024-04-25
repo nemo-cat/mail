@@ -54,7 +54,7 @@ function writeNewMail(newKey)
 { 
     addMailList({
         key: newKey,
-        sender: "qjxj1112@naver.com", //보내는 사람은 고정
+        sender: "sound33@sound.mail", //보내는 사람은 고정
         receiver: "",
         title: "",
         content: "",
