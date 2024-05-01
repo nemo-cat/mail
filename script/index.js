@@ -32,19 +32,19 @@ function addListToHTML(sender, title, date, key)
     let ico2 = "mailIco2_" + key;
     let ico3 = "mailIco3_" + key;
 
-    document.getElementById(ico1).nextElementSibling.style.backgroundImage = 'url("../images/ico_checkbox_normal.png")';
-    document.getElementById(ico2).nextElementSibling.style.backgroundImage = 'url("../images/ico_favorite_normal.png")';
+    document.getElementById(ico1).nextElementSibling.style.backgroundImage = "url('images/ico_checkbox_normal.png')";
+    document.getElementById(ico2).nextElementSibling.style.backgroundImage = "url('images/ico_favorite_normal.png')";
 
     //메일 읽음 상태를 확인하여 아이콘변경
     let mailStatus = mailMap[key].status;
     if (mailStatus == 0)
     {
-        document.getElementById(ico3).style.background = 'url("../images/ico_mail_normal.png") no-repeat center';
+        document.getElementById(ico3).style.background = "url('images/ico_mail_normal.png') no-repeat center";
     }
     else
     {
         document.getElementById("mailList" + key).style.color = "#8D8D8D";
-        document.getElementById(ico3).style.background = 'url("../images/ico_mail_active.png") no-repeat center';
+        document.getElementById(ico3).style.background = "url('images/ico_mail_active.png') no-repeat center";
     }
 }
 
@@ -295,13 +295,13 @@ function addCheckedLi(e)
     {
         //배열에 없는 경우 새로 추가함
         checkedLi.push(getLiIndex);
-        checkBox.nextElementSibling.style.backgroundImage = 'url("../images/ico_checkbox_active.png")';
+        checkBox.nextElementSibling.style.backgroundImage = "url('images/ico_checkbox_active.png')";
     }
     else
     {
         //배열에 있는 경우 해당 값 제거
         checkedLi.splice(arrIndex, 1);
-        checkBox.nextElementSibling.style.backgroundImage = 'url("../images/ico_checkbox_normal.png")';
+        checkBox.nextElementSibling.style.backgroundImage = "url('images/ico_checkbox_normal.png')";
     }
 }
 
